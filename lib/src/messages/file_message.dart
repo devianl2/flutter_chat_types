@@ -61,7 +61,7 @@ class FileMessage extends Message {
           id,
           partialFile.metadata,
           remoteId,
-          repliedMessage,
+          partialFile.repliedMessage,
           roomId,
           status,
           MessageType.file,

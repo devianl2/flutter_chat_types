@@ -63,7 +63,7 @@ class ImageMessage extends Message {
           id,
           partialImage.metadata,
           remoteId,
-          repliedMessage,
+          partialImage.repliedMessage,
           roomId,
           status,
           MessageType.image,

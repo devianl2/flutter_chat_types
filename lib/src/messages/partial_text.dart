@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
+import '../message.dart';
 import '../preview_data.dart' show PreviewData;
 import 'text_message.dart';
 
@@ -16,6 +17,7 @@ class PartialText {
   const PartialText({
     this.metadata,
     this.previewData,
+    this.repliedMessage,
     required this.text,
   });
 
@@ -31,6 +33,9 @@ class PartialText {
 
   /// See [PreviewData]
   final PreviewData? previewData;
+
+  /// Message that is being replied to with the current message
+  final Message? repliedMessage;
 
   /// User's message
   final String text;
