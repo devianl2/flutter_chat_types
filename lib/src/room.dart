@@ -24,6 +24,7 @@ class Room extends Equatable {
     this.name,
     required this.type,
     this.updatedAt,
+    this.updatedAtString,
     required this.users,
   });
 
@@ -45,6 +46,7 @@ class Room extends Equatable {
     String? name,
     RoomType? type,
     int? updatedAt,
+    String? updatedAtString,
     List<User>? users,
   }) {
     return Room(
@@ -60,6 +62,7 @@ class Room extends Equatable {
       name: name,
       type: type ?? this.type,
       updatedAt: updatedAt,
+      updatedAtString: updatedAtString,
       users: users ?? this.users,
     );
   }
@@ -75,6 +78,7 @@ class Room extends Equatable {
         name,
         type,
         updatedAt,
+        updatedAtString,
         users
       ];
 
@@ -103,6 +107,9 @@ class Room extends Equatable {
 
   /// Updated room timestamp, in ms
   final int? updatedAt;
+
+  /// Updated room timestamp, in iso8601
+  final String? updatedAtString;
 
   /// List of users which are in the room
   final List<User> users;

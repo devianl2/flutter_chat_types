@@ -31,6 +31,7 @@ abstract class Message extends Equatable {
     this.status,
     this.type,
     this.updatedAt,
+    this.updatedAtString,
   );
 
   /// Creates a particular message from a map (decoded JSON).
@@ -75,6 +76,7 @@ abstract class Message extends Equatable {
     Status? status,
     String? text,
     int? updatedAt,
+    String? updatedAtString,
     String? uri,
   });
 
@@ -113,4 +115,7 @@ abstract class Message extends Equatable {
 
   /// Updated message timestamp, in ms
   final int? updatedAt;
+
+  /// Updated message timestamp, in iso8601
+  final String? updatedAtString;
 }

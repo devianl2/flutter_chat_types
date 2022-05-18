@@ -21,6 +21,7 @@ UnsupportedMessage _$UnsupportedMessageFromJson(Map<String, dynamic> json) =>
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
       updatedAt: json['updatedAt'] as int?,
+      updatedAtString: json['updatedAtString'] as String?,
     );
 
 Map<String, dynamic> _$UnsupportedMessageToJson(UnsupportedMessage instance) {
@@ -44,6 +45,7 @@ Map<String, dynamic> _$UnsupportedMessageToJson(UnsupportedMessage instance) {
   writeNotNull('status', _$StatusEnumMap[instance.status]);
   val['type'] = _$MessageTypeEnumMap[instance.type];
   writeNotNull('updatedAt', instance.updatedAt);
+  writeNotNull('updatedAtString', instance.updatedAtString);
   return val;
 }
 

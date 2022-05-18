@@ -22,6 +22,7 @@ class User extends Equatable {
     this.metadata,
     this.role,
     this.createdAt,
+    this.createdAtString
   });
 
   /// Creates user from a map (decoded JSON).
@@ -46,6 +47,7 @@ class User extends Equatable {
     Map<String, dynamic>? metadata,
     Role? role,
     int? createdAt,
+    String? createdAtString,
   }) {
     return User(
       uid: uid,
@@ -62,6 +64,7 @@ class User extends Equatable {
             },
       role: role,
       createdAt: createdAt,
+      createdAtString: createdAtString,
     );
   }
 
@@ -76,7 +79,8 @@ class User extends Equatable {
         imageUrl,
         metadata,
         role,
-        createdAt
+        createdAt,
+        createdAtString
       ];
 
   /// Unique ID of the user
@@ -105,4 +109,7 @@ class User extends Equatable {
 
   /// Created user timestamp, in ms
   final int? createdAt;
+
+  /// Created user timestamp, in iso8601
+  final String? createdAtString;
 }

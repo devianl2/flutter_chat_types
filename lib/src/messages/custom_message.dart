@@ -26,6 +26,7 @@ class CustomMessage extends Message {
     Status? status,
     MessageType? type,
     int? updatedAt,
+    String? updatedAtString,
   }) : super(
           author,
           createdAt,
@@ -38,6 +39,7 @@ class CustomMessage extends Message {
           status,
           type ?? MessageType.custom,
           updatedAt,
+          updatedAtString
         );
 
   /// Creates a full custom message from a partial one.
@@ -52,6 +54,7 @@ class CustomMessage extends Message {
     bool? showStatus,
     Status? status,
     int? updatedAt,
+    String? updatedAtString,
   }) : super(
           author,
           createdAt,
@@ -64,6 +67,7 @@ class CustomMessage extends Message {
           status,
           MessageType.custom,
           updatedAt,
+          updatedAtString
         );
 
   /// Creates a custom message from a map (decoded JSON).
@@ -97,6 +101,7 @@ class CustomMessage extends Message {
     String? text,
     int? updatedAt,
     String? uri,
+    String? updatedAtString,
   }) {
     return CustomMessage(
       author: author ?? this.author,
@@ -114,6 +119,7 @@ class CustomMessage extends Message {
       status: status ?? this.status,
       showStatus: showStatus,
       updatedAt: updatedAt,
+      updatedAtString: updatedAtString
     );
   }
 
@@ -129,5 +135,6 @@ class CustomMessage extends Message {
         roomId,
         status,
         updatedAt,
+        updatedAtString
       ];
 }
