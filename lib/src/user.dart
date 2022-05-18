@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 part 'user.g.dart';
 
 /// All possible roles user can have.
-enum Role { admin, agent, moderator, user }
+enum Role { moderator, learner }
 
 /// A class that represents user.
 @JsonSerializable()
@@ -13,15 +13,15 @@ enum Role { admin, agent, moderator, user }
 class User extends Equatable {
   /// Creates a user.
   const User({
-    this.createdAt,
-    this.firstName,
-    required this.id,
+    required this.uid,
+    this.tenantId,
+    this.staffId,
+    this.displayName,
+    this.email,
     this.imageUrl,
-    this.lastName,
-    this.lastSeen,
     this.metadata,
     this.role,
-    this.updatedAt,
+    this.createdAt,
   });
 
   /// Creates user from a map (decoded JSON).
@@ -31,26 +31,29 @@ class User extends Equatable {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
   /// Creates a copy of the user with an updated data.
-  /// [firstName], [imageUrl], [lastName], [lastSeen], [role] and [updatedAt]
+  /// [uid], [tenantId], [staffId], [displayName], [email], [imageUrl], [role] and [createdAt]
   /// with null values will nullify existing values.
   /// [metadata] with null value will nullify existing metadata, otherwise
   /// both metadatas will be merged into one Map, where keys from a passed
   /// metadata will overwite keys from the previous one.
   User copyWith({
-    String? firstName,
+    String? uid,
+    String? tenantId,
+    String? staffId,
+    String? displayName,
+    String? email,
     String? imageUrl,
-    String? lastName,
-    int? lastSeen,
     Map<String, dynamic>? metadata,
     Role? role,
-    int? updatedAt,
+    int? createdAt,
   }) {
     return User(
-      firstName: firstName,
-      id: id,
+      uid: uid,
+      tenantId: tenantId,
+      staffId: staffId,
+      displayName: displayName,
+      email: email,
       imageUrl: imageUrl,
-      lastName: lastName,
-      lastSeen: lastSeen,
       metadata: metadata == null
           ? null
           : {
@@ -58,41 +61,41 @@ class User extends Equatable {
               ...metadata,
             },
       role: role,
-      updatedAt: updatedAt,
+      createdAt: createdAt,
     );
   }
 
   /// Equatable props
   @override
   List<Object?> get props => [
-        createdAt,
-        firstName,
-        id,
+        uid,
+        tenantId,
+        staffId,
+        displayName,
+        email,
         imageUrl,
-        lastName,
-        lastSeen,
         metadata,
         role,
-        updatedAt
+        createdAt
       ];
 
-  /// Created user timestamp, in ms
-  final int? createdAt;
-
-  /// First name of the user
-  final String? firstName;
-
   /// Unique ID of the user
-  final String id;
+  final String? uid;
+
+  /// Tenant ID of the user
+  final String? tenantId;
+
+  /// Staff ID of the user
+  final String? staffId;
+
+  /// Display name of the user
+  final String? displayName;
+
+  /// Email of the user
+  final String? email;
 
   /// Remote image URL representing user's avatar
   final String? imageUrl;
-
-  /// Last name of the user
-  final String? lastName;
-
-  /// Timestamp when user was last visible, in ms
-  final int? lastSeen;
 
   /// Additional custom metadata or attributes related to the user
   final Map<String, dynamic>? metadata;
@@ -100,6 +103,6 @@ class User extends Equatable {
   /// User [Role]
   final Role? role;
 
-  /// Updated user timestamp, in ms
-  final int? updatedAt;
+  /// Created user timestamp, in ms
+  final int? createdAt;
 }
