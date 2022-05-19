@@ -27,7 +27,6 @@ class TextMessage extends Message {
     required this.text,
     MessageType? type,
     int? updatedAt,
-    String? updatedAtString,
   }) : super(
           author,
           createdAt,
@@ -40,7 +39,6 @@ class TextMessage extends Message {
           status,
           type ?? MessageType.text,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a full text message from a partial one.
@@ -55,7 +53,6 @@ class TextMessage extends Message {
     bool? showStatus,
     Status? status,
     int? updatedAt,
-    String? updatedAtString,
   })  : previewData = partialText.previewData,
         text = partialText.text,
         super(
@@ -70,7 +67,6 @@ class TextMessage extends Message {
           status,
           MessageType.text,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a text message from a map (decoded JSON).
@@ -100,7 +96,6 @@ class TextMessage extends Message {
     Status? status,
     String? text,
     int? updatedAt,
-    String? updatedAtString,
     String? uri,
   }) {
     return TextMessage(
@@ -121,7 +116,6 @@ class TextMessage extends Message {
       status: status ?? this.status,
       text: text ?? this.text,
       updatedAt: updatedAt,
-      updatedAtString: updatedAtString
     );
   }
 
@@ -139,7 +133,6 @@ class TextMessage extends Message {
         status,
         text,
         updatedAt,
-        updatedAtString
       ];
 
   /// See [PreviewData]

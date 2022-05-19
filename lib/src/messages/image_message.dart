@@ -43,7 +43,6 @@ class ImageMessage extends Message {
           status,
           type ?? MessageType.image,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a full image message from a partial one.
@@ -76,7 +75,6 @@ class ImageMessage extends Message {
           status,
           MessageType.image,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates an image message from a map (decoded JSON).
@@ -108,7 +106,6 @@ class ImageMessage extends Message {
     String? text,
     int? updatedAt,
     String? uri,
-    String? updatedAtString,
   }) {
     return ImageMessage(
       author: author ?? this.author,
@@ -131,7 +128,6 @@ class ImageMessage extends Message {
       updatedAt: updatedAt,
       uri: uri ?? this.uri,
       width: width,
-      updatedAtString: updatedAtString
     );
   }
 
@@ -152,7 +148,6 @@ class ImageMessage extends Message {
         updatedAt,
         uri,
         width,
-        updatedAtString
       ];
 
   /// Image height in pixels

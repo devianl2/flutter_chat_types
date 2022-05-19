@@ -43,7 +43,6 @@ class FileMessage extends Message {
           status,
           type ?? MessageType.file,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a full file message from a partial one.
@@ -76,7 +75,6 @@ class FileMessage extends Message {
           status,
           MessageType.file,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a file message from a map (decoded JSON).
@@ -152,7 +150,6 @@ class FileMessage extends Message {
         status,
         updatedAt,
         uri,
-        updatedAtString
       ];
 
   /// Specify whether the message content is currently being loaded

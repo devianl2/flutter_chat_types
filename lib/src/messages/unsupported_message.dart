@@ -27,7 +27,6 @@ class UnsupportedMessage extends Message {
     Status? status,
     MessageType? type,
     int? updatedAt,
-    String? updatedAtString,
   }) : super(
           author,
           createdAt,
@@ -40,7 +39,6 @@ class UnsupportedMessage extends Message {
           status,
           type ?? MessageType.unsupported,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates an unsupported message from a map (decoded JSON).
@@ -92,7 +90,6 @@ class UnsupportedMessage extends Message {
       showStatus: showStatus,
       status: status ?? this.status,
       updatedAt: updatedAt,
-      updatedAtString: updatedAtString,
     );
   }
 
@@ -108,6 +105,5 @@ class UnsupportedMessage extends Message {
         roomId,
         status,
         updatedAt,
-        updatedAtString
       ];
 }

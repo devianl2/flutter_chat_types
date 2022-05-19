@@ -39,7 +39,6 @@ class CustomMessage extends Message {
           status,
           type ?? MessageType.custom,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a full custom message from a partial one.
@@ -67,7 +66,6 @@ class CustomMessage extends Message {
           status,
           MessageType.custom,
           updatedAt,
-          updatedAtString
         );
 
   /// Creates a custom message from a map (decoded JSON).
@@ -135,6 +133,5 @@ class CustomMessage extends Message {
         roomId,
         status,
         updatedAt,
-        updatedAtString
       ];
 }

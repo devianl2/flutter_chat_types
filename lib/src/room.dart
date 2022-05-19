@@ -24,8 +24,8 @@ class Room extends Equatable {
     this.name,
     required this.type,
     this.updatedAt,
-    this.updatedAtString,
     required this.users,
+    this.userIds,
   });
 
   /// Creates room from a map (decoded JSON).
@@ -48,6 +48,7 @@ class Room extends Equatable {
     int? updatedAt,
     String? updatedAtString,
     List<User>? users,
+    List<String>? userIds,
   }) {
     return Room(
       id: id,
@@ -62,8 +63,8 @@ class Room extends Equatable {
       name: name,
       type: type ?? this.type,
       updatedAt: updatedAt,
-      updatedAtString: updatedAtString,
       users: users ?? this.users,
+      userIds: userIds ?? this.userIds,
     );
   }
 
@@ -78,8 +79,8 @@ class Room extends Equatable {
         name,
         type,
         updatedAt,
-        updatedAtString,
-        users
+        users,
+        userIds
       ];
 
   /// Created room timestamp, in ms
@@ -108,9 +109,9 @@ class Room extends Equatable {
   /// Updated room timestamp, in ms
   final int? updatedAt;
 
-  /// Updated room timestamp, in iso8601
-  final String? updatedAtString;
-
   /// List of users which are in the room
-  final List<User> users;
+  final List<User>? users;
+
+  /// List of user ids which are in the room
+  final List<String>? userIds;
 }
