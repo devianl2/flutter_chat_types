@@ -19,13 +19,14 @@ class Room extends Equatable {
     this.createdAt,
     required this.id,
     this.imageUrl,
-    this.lastMessages,
+    this.lastMessage,
     this.metadata,
     this.name,
     required this.type,
     this.updatedAt,
     required this.users,
     this.userIds,
+    this.userRoles
   });
 
   /// Creates room from a map (decoded JSON).
@@ -49,11 +50,12 @@ class Room extends Equatable {
     String? updatedAtString,
     List<User>? users,
     List<String>? userIds,
+    List<Map<String, String?>>? userRoles
   }) {
     return Room(
       id: id,
       imageUrl: imageUrl,
-      lastMessages: lastMessages,
+      lastMessage: lastMessage,
       metadata: metadata == null
           ? null
           : {
@@ -65,6 +67,7 @@ class Room extends Equatable {
       updatedAt: updatedAt,
       users: users ?? this.users,
       userIds: userIds ?? this.userIds,
+      userRoles: userRoles ?? this.userRoles
     );
   }
 
@@ -74,13 +77,14 @@ class Room extends Equatable {
         createdAt,
         id,
         imageUrl,
-        lastMessages,
+        lastMessage,
         metadata,
         name,
         type,
         updatedAt,
         users,
-        userIds
+        userIds,
+        userRoles
       ];
 
   /// Created room timestamp, in ms
@@ -94,7 +98,7 @@ class Room extends Equatable {
   final String? imageUrl;
 
   /// List of last messages this room has received
-  final List<Message>? lastMessages;
+  final String? lastMessage;
 
   /// Additional custom metadata or attributes related to the room
   final Map<String, dynamic>? metadata;
@@ -114,4 +118,7 @@ class Room extends Equatable {
 
   /// List of user ids which are in the room
   final List<String>? userIds;
+
+  /// List of user ids which are in the room
+  final List<Map<String, String?>>? userRoles;
 }
