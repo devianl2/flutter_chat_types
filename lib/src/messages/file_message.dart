@@ -29,7 +29,6 @@ class FileMessage extends Message {
     Status? status,
     MessageType? type,
     int? updatedAt,
-    String? updatedAtString,
     required this.uri,
   }) : super(
           author,
@@ -58,7 +57,6 @@ class FileMessage extends Message {
     bool? showStatus,
     Status? status,
     int? updatedAt,
-    String? updatedAtString,
   })  : mimeType = partialFile.mimeType,
         name = partialFile.name,
         size = partialFile.size,
@@ -106,7 +104,6 @@ class FileMessage extends Message {
     String? text,
     int? updatedAt,
     String? uri,
-    String? updatedAtString,
   }) {
     return FileMessage(
       author: author ?? this.author,
@@ -128,7 +125,6 @@ class FileMessage extends Message {
       size: size,
       status: status ?? this.status,
       updatedAt: updatedAt,
-      updatedAtString: updatedAtString,
       uri: uri ?? this.uri,
     );
   }

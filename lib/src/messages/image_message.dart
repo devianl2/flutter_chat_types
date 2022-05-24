@@ -28,7 +28,6 @@ class ImageMessage extends Message {
     Status? status,
     MessageType? type,
     int? updatedAt,
-    String? updatedAtString,
     required this.uri,
     this.width,
   }) : super(
@@ -57,7 +56,6 @@ class ImageMessage extends Message {
     bool? showStatus,
     Status? status,
     int? updatedAt,
-    String? updatedAtString,
   })  : height = partialImage.height,
         name = partialImage.name,
         size = partialImage.size,

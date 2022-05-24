@@ -71,7 +71,6 @@ class UnsupportedMessage extends Message {
     Status? status,
     String? text,
     int? updatedAt,
-    String? updatedAtString,
     String? uri,
   }) {
     return UnsupportedMessage(

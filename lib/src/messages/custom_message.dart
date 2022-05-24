@@ -26,7 +26,6 @@ class CustomMessage extends Message {
     Status? status,
     MessageType? type,
     int? updatedAt,
-    String? updatedAtString,
   }) : super(
           author,
           createdAt,
@@ -53,7 +52,6 @@ class CustomMessage extends Message {
     bool? showStatus,
     Status? status,
     int? updatedAt,
-    String? updatedAtString,
   }) : super(
           author,
           createdAt,
@@ -99,7 +97,6 @@ class CustomMessage extends Message {
     String? text,
     int? updatedAt,
     String? uri,
-    String? updatedAtString,
   }) {
     return CustomMessage(
       author: author ?? this.author,
@@ -117,7 +114,6 @@ class CustomMessage extends Message {
       status: status ?? this.status,
       showStatus: showStatus,
       updatedAt: updatedAt,
-      updatedAtString: updatedAtString
     );
   }
 

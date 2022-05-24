@@ -47,7 +47,6 @@ class Room extends Equatable {
     String? name,
     RoomType? type,
     int? updatedAt,
-    String? updatedAtString,
     List<User>? users,
     List<String>? userIds,
     List<Map<String, String?>>? userRoles
