@@ -55,7 +55,7 @@ class Room extends Equatable {
     return Room(
       id: id,
       imageUrl: imageUrl,
-      lastMessage: lastMessage,
+      lastMessage: lastMessage ?? '',
       metadata: metadata == null
           ? null
           : {
