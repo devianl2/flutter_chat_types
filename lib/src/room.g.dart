@@ -8,7 +8,7 @@ part of 'room.dart';
 
 Room _$RoomFromJson(Map<String, dynamic> json) => Room(
       createdAt: json['createdAt'] as int?,
-      id: json['id'] as String,
+      id: json['id'] as String?,
       imageUrl: json['imageUrl'] as String?,
       lastMessage: json['lastMessage'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
@@ -35,7 +35,7 @@ Map<String, dynamic> _$RoomToJson(Room instance) {
   }
 
   writeNotNull('createdAt', instance.createdAt);
-  val['id'] = instance.id;
+  writeNotNull('id', instance.id);
   writeNotNull('imageUrl', instance.imageUrl);
   writeNotNull('lastMessage', instance.lastMessage);
   writeNotNull('metadata', instance.metadata);

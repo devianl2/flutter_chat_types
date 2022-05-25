@@ -17,7 +17,7 @@ class Room extends Equatable {
   /// Creates a [Room]
   const Room({
     this.createdAt,
-    required this.id,
+    this.id,
     this.imageUrl,
     this.lastMessage,
     this.metadata,
@@ -90,7 +90,7 @@ class Room extends Equatable {
   final int? createdAt;
 
   /// Room's unique ID
-  final String id;
+  final String? id;
 
   /// Room's image. In case of the [RoomType.direct] - avatar of the second person,
   /// otherwise a custom image [RoomType.group].
