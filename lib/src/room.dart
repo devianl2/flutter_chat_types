@@ -42,6 +42,7 @@ class Room extends Equatable {
   /// metadata will overwite keys from the previous one.
   /// [type] and [users] with null values will be overwritten by previous values.
   Room copyWith({
+    String? id,
     String? imageUrl,
     Map<String, dynamic>? metadata,
     String? name,
@@ -52,7 +53,7 @@ class Room extends Equatable {
     List<Map<String, String?>>? userRoles
   }) {
     return Room(
-      id: id,
+      id: id ?? this.id,
       imageUrl: imageUrl,
       lastMessage: lastMessage ?? '',
       metadata: metadata == null
