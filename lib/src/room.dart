@@ -54,7 +54,7 @@ class Room extends Equatable {
   }) {
     return Room(
       id: id ?? this.id,
-      imageUrl: imageUrl,
+      imageUrl: imageUrl ?? this.imageUrl,
       lastMessage: lastMessage ?? '',
       metadata: metadata == null
           ? null
@@ -62,9 +62,9 @@ class Room extends Equatable {
               ...this.metadata ?? {},
               ...metadata,
             },
-      name: name,
+      name: name ?? this.name,
       type: type ?? this.type,
-      updatedAt: updatedAt,
+      updatedAt: updatedAt ?? this.updatedAt,
       users: users ?? this.users,
       userIds: userIds ?? this.userIds,
       userRoles: userRoles ?? this.userRoles
